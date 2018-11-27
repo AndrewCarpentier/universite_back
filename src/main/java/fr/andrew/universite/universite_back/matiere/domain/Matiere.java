@@ -1,11 +1,14 @@
 package fr.andrew.universite.universite_back.matiere.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import fr.andrew.universite.universite_back.enseignant.domain.Enseignant;
+import fr.andrew.universite.universite_back.note.domain.Note;
 import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,4 +29,7 @@ public class Matiere implements Serializable {
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "id_enseignant")
     private Enseignant enseignant;
+    @OneToMany(mappedBy = "matiere")
+    @JsonIgnore
+    private List<Note> notes;
 }
