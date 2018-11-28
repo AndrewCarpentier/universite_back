@@ -1,6 +1,7 @@
 package fr.andrew.universite.universite_back.note.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import fr.andrew.universite.universite_back.etudiant.domain.Etudiant;
 import fr.andrew.universite.universite_back.matiere.domain.Matiere;
 import lombok.Data;
@@ -11,6 +12,7 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name = "noter")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Note implements Serializable {
 
