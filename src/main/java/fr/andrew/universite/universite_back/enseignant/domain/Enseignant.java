@@ -1,8 +1,6 @@
 package fr.andrew.universite.universite_back.enseignant.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.*;
 import fr.andrew.universite.universite_back.matiere.domain.Matiere;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -23,6 +21,7 @@ public class Enseignant implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "numero_enseignant")
+    @JsonProperty("numero")
     private Integer numeroEnseignant;
     @Column(name = "nom")
     private String nom;

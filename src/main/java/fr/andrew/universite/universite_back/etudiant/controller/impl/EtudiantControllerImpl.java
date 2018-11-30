@@ -51,4 +51,5 @@ public class EtudiantControllerImpl implements IEtudiantController {
         etudiantBusiness.deleteEtudiant(id);
         return null;
     }
+
 }

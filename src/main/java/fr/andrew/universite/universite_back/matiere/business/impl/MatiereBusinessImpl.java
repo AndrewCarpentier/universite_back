@@ -1,5 +1,6 @@
 package fr.andrew.universite.universite_back.matiere.business.impl;
 
+import fr.andrew.universite.universite_back.enseignant.business.impl.EnseignantBusinessImpl;
 import fr.andrew.universite.universite_back.matiere.business.IMatiereBusiness;
 import fr.andrew.universite.universite_back.matiere.domain.Matiere;
 import fr.andrew.universite.universite_back.matiere.repository.IMatiereRepository;
@@ -13,6 +14,9 @@ public class MatiereBusinessImpl implements IMatiereBusiness {
 
     @Autowired
     private IMatiereRepository matiereRepository;
+
+    @Autowired
+    private EnseignantBusinessImpl enseignantBusiness;
 
     @Override
     public List<Matiere> getAllMatiere() {
@@ -33,5 +37,11 @@ public class MatiereBusinessImpl implements IMatiereBusiness {
     public Void deleteMatiere(Integer id) {
         matiereRepository.deleteById(id);
         return null;
+    }
+
+    @Override
+    public List<Matiere> findMatiereByIdEnseignant(Integer idEnseignant) {
+
+        return matiereRepository.findAllByEnseignant_Id(idEnseignant);
     }
 }

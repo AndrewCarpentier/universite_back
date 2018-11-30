@@ -26,6 +26,11 @@ public class NoteBusinessImpl implements INoteBusiness {
     }
 
     @Override
+    public List<Note> getNoteByIdEtudiant(Integer idEtudiant) {
+        return noteRepository.getAllByEtudiant_Id(idEtudiant);
+    }
+
+    @Override
     public Note saveNote(Note note) {
         return noteRepository.save(note);
     }

@@ -3,6 +3,7 @@ package fr.andrew.universite.universite_back.enseignant.controller.impl;
 import fr.andrew.universite.universite_back.enseignant.business.IEnseignantBusiness;
 import fr.andrew.universite.universite_back.enseignant.controller.IEnseignantController;
 import fr.andrew.universite.universite_back.enseignant.domain.Enseignant;
+import fr.andrew.universite.universite_back.matiere.domain.Matiere;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class EnseignantControllerImpl implements IEnseignantController {
     @Override
     @GetMapping(path = "/enseignants", name = "enseignants")
     public List<Enseignant> getAllEnseignants() {
-        log.info("appel de getAllEnseignants");
+        log.error("appel de getAllEnseignants");
         return enseignantBusiness.getAllEnseignants();
     }
 
@@ -50,6 +51,13 @@ public class EnseignantControllerImpl implements IEnseignantController {
         log.info("appel de deleteEnseignant");
         enseignantBusiness.deleteEnseignant(id);
         return null;
+    }
+
+    @Override
+    @GetMapping(path = "/enseignants/{id}/matieres", name = "matiereByIdEnseignant")
+    public List<Matiere> matiereByIdEnseignant(@PathVariable(name = "id") Integer idEnseignant) {
+
+        return enseignantBusiness.matiereByIdEnseignant(idEnseignant);
     }
 
 

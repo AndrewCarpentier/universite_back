@@ -9,6 +9,7 @@ public interface INoteBusiness {
 
     List<Note> getAllNote();
     Note getNoteById(NotePk id);
+    List<Note> getNoteByIdEtudiant(Integer idEtudiant);
     Note saveNote(Note note);
     Void deleteNote(NotePk id);
 

@@ -10,4 +10,5 @@ public interface IMatiereBusiness {
     Matiere getMatiereById(Integer id);
     Matiere saveMatiere(Matiere matiere);
     Void deleteMatiere(Integer id);
+    List<Matiere> findMatiereByIdEnseignant(Integer idEnseignant);
 }
