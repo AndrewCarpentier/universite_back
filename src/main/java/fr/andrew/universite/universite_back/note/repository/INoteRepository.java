@@ -11,4 +11,5 @@ import java.util.List;
 public interface INoteRepository extends JpaRepository<Note, NotePk> {
 
     List<Note> getAllByEtudiant_Id(Integer idEtudiant);
+    List<Note> findByEtudiant_IdAndNoteValueLessThan(Integer id, Double aDouble);
 }

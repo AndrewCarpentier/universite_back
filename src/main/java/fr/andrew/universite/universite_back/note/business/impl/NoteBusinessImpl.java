@@ -31,6 +31,11 @@ public class NoteBusinessImpl implements INoteBusiness {
     }
 
     @Override
+    public List<Note> getNoteByIdEtudiantInf(Integer idEtudiant, Double aDouble) {
+        return noteRepository.findByEtudiant_IdAndNoteValueLessThan(idEtudiant, aDouble);
+    }
+
+    @Override
     public Note saveNote(Note note) {
         return noteRepository.save(note);
     }

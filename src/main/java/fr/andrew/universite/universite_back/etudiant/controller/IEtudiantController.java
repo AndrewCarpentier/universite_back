@@ -11,4 +11,5 @@ public interface IEtudiantController {
     Etudiant addEtudiant(Etudiant etudiant);
     Etudiant updateEtudiant(Integer id ,Etudiant etudiant);
     Void deleteEtudiant(Integer id);
+
 }

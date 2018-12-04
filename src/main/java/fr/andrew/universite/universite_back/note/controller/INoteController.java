@@ -10,6 +10,7 @@ public interface INoteController {
     List<Note> getAllNote();
     Note getNoteById(NotePk id, Integer idEtudiant, Integer idMatiere);
     List<Note> getNoteByIdEtudiant(Integer idEtudiant);
+    List<Note> getNoteByIdEtudiantInf(Integer idEtudiant, Double aDouble);
     Note addNote(Note note);
     Note updateNote(Note note, NotePk id, Integer idEtudiant, Integer idMatiere);
     Void deleteNote(NotePk id, Integer idEtudiant, Integer idMatiere);

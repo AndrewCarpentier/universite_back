@@ -40,6 +40,13 @@ public class NoteControllerImpl implements INoteController {
     }
 
     @Override
+    @GetMapping(path = "/notes/etudiant/{id_etudiant}/valeurInf/{valeur_inf}", name = "noteByIdEtudiant")
+    public List<Note> getNoteByIdEtudiantInf(@PathVariable(name = "id_etudiant") Integer idEtudiant, @PathVariable(name = "valeur_inf") Double aDouble) {
+        log.info("appel de getNoteByIdEtudiantInf");
+        return noteBusiness.getNoteByIdEtudiantInf(idEtudiant, aDouble);
+    }
+
+    @Override
     @PostMapping(path = "/notes",name = "addNote")
     public Note addNote(@RequestBody Note note) {
         log.info("appel de addNote ");
